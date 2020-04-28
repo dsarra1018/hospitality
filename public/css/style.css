@@ -4,6 +4,10 @@ background-color: #566777;
 height: 80px;
 }
 
+.navbar-brand {
+  color: white;
+}
+
 #color {
   background-color: #f4ebe6;
 }
