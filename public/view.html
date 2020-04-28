@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Patient Exspress App</title>
+    <title>View Patient Record</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
@@ -14,9 +15,20 @@
       </a>
     </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4"></div>
-            
+        <!--Card for search-->
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h1><strong>Patient Search</strong></h1>
+                </div>
+                <!--Input and button area-->
+                <div class="card-body">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span> Lookup Patient</button>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
