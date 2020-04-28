@@ -1,4 +1,13 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+
+nav {
+background-color: #566777;
+height: 80px;
+}
+
+#color {
+  background-color: #f4ebe6;
+}
+
+html, body {
+  background-color: #e1ded7;
 }
