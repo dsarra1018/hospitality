@@ -1,4 +1,5 @@
 
+/* All css */
 nav {
 background-color: #566777;
 height: 80px;
@@ -15,10 +16,56 @@ height: 80px;
 html, body {
   background-color: #e1ded7;
 }
+
+/* view css */
 .card {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 75%;
   background-color: #f4ebe6;
+}
+.record {
+  background-color: white;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+.sidepic {
+  background-color: blue;
+  background-repeat: repeat;
+  border-radius:10px;
+  padding: 5px;
+  height: 100%;
+}
+.namedob {
+  background-color: yellow;
+  background-repeat: repeat;
+  border-radius:10px;
+  padding: 5px;
+  margin: 10px;
+}
+.sympt{
+  background-color: pink;
+  background-repeat: repeat;
+  border-radius:10px;
+  padding: 5px;
+}
+.diag {
+  background-color:green;
+  background-repeat: repeat;
+  border-radius:10px;
+  padding: 5px;
+  margin: 15px;
+}
+.treat {
+  background-color:tan;
+  background-repeat: repeat;
+  border-radius:10px;
+  padding: 5px;
+  margin: 15px;
 }
