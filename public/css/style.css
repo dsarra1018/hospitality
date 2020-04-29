@@ -5,8 +5,14 @@ background-color: #566777;
 height: 80px;
 }
 
+span {
+  color: #d93335;
+  font-size: x-large;
+}
+
 .navbar-brand {
   color: white;
+  font-size: x-large;
 }
 
 #color {
@@ -35,6 +41,15 @@ img {
   margin-right: auto;
   width: 75%;
 }
+
+#app-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 35px;
+  width: 35px;
+}
+
 .sidepic {
   background-color: blue;
   background-repeat: repeat;
