@@ -22,7 +22,9 @@ span {
 html, body {
   background-color: #e1ded7;
 }
-
+.fa {
+  color: white;
+}
 /* view css */
 .card {
   display: block;
