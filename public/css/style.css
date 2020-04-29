@@ -1,7 +1,7 @@
 
 /* All css */
 nav {
-background-color: #566777;
+background-color: #5e3c58;
 height: 80px;
 }
 
@@ -13,6 +13,10 @@ span {
 .navbar-brand {
   color: white;
   font-size: x-large;
+}
+
+.navbar-brand:hover {
+  color: white;
 }
 
 #color {
@@ -46,8 +50,8 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
 }
 
 .sidepic {
