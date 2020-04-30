@@ -1,27 +1,17 @@
 // Dependencies
-// Requiring mysql2 package
-const mysql = require("mysql2");
+const Sequelize = require("sequelize");
 
-// MySQL DB Connection Information
-if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-    connection = mysql.createConnection({
-        host: "localhost",
-        port: 3306,
-        user: "root",
-        password: null,
-        database: "patients_db"
-    });
-};
-
-// Inititate MySQL Connection
-connection.connect((err) => {
-    if (err) {
-        console.error("error connecting: " + err.stack);
-        return;
+// Creates MySQL connection using Sequelize
+const sequelize = new Sequelize("patients_db", "root", null, {
+    host: "localhost",
+    port: 3306,
+    dialect: "mysql",
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
     }
-    console.log("connected as id " + connection.threadId);
 });
 
-module.exports = connection;
+// Exports the connection for other files to use
+module.exports = sequelize;
