@@ -44,16 +44,17 @@ module.exports = function(app) {
     req.logout();
     res.redirect("/");
   });
-
-  // Route for viewing page
-  app.get("/api/add", function(req, res) {
-    req.add();
-    res.redirect("/add");
-  });
-
-  // Route for adding page
-  app.get("/api/view", function(req, res) {
-    req.view();
-    res.redirect("/view");
-  });
 };
+
+//   // Route for viewing page
+//   app.get("/api/add", function(req, res) {
+//     req.add();
+//     res.redirect("/add");
+//   });
+
+//   // Route for adding page
+//   app.get("/api/view", function(req, res) {
+//     req.view();
+//     res.redirect("/view");
+//   });
+// };
