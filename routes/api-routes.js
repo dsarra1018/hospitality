@@ -7,15 +7,12 @@ module.exports = function(app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
-      email: req.user.email,
-      id: req.user.id
-    });
+   
+    res.json(req.json);
   });
 
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+  // Route for signing up a user. 
+  // If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     db.User.create({
@@ -30,24 +27,33 @@ module.exports = function(app) {
       });
   });
 
-  // Route for logging user out
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
-  });
-
-  // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function(req, res) {
+  //Route for getting some data about our user to be used client side
+  app.get("/api/user_data", (req, res) => {
     if (!req.user) {
-      // The user is not logged in, send back an empty object
       res.json({});
     } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
         id: req.user.id
       });
     }
+  });
+
+  //Route for loggin user out
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
+
+  // Route for viewing page
+  app.get("/api/add", function(req, res) {
+    req.add();
+    res.redirect("/add");
+  });
+
+  // Route for adding page
+  app.get("/api/view", function(req, res) {
+    req.view();
+    res.redirect("/view");
   });
 };
