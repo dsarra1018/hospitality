@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Getting references to our form and input
-  var signUpForm = $("form.signup");
+  var signUpForm = $("form.login");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
       password: password
     })
       .then(function(data) {
-        window.location.replace("/add");
+        window.location.replace("/index");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
