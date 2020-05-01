@@ -42,22 +42,68 @@ module.exports = function(app) {
     }
   });
 
-  //Route for loggin user out
-  app.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
+  // //Route for loggin user out
+  // app.get("/logout", (req, res) => {
+  //   req.logout();
+  //   res.redirect("/");
+  // });
+
+// //GET route to add
+// app.get("api/add", function(req, res) {
+//   res.json(add);
+// });
+
+// //Get route to view
+// app.get("api/view", function(req, res) {
+//   res.json(view);
+// })
+
+ // GET route for getting all of the patient
+ app.get("/api/add", function(request, response) {
+  db.Patient.findAll({}).then( dbnewPatient => {
+    response.json(dbnewPatient);
   });
+});
+
+// POST route for saving a new patient.
+app.post("/api/add", function(request, response) {
+  db.Patient.create(
+    {
+      text: request.body.text,
+      complete: request.body.complete
+   }).then( newPatient => {
+    response.json(newPatient);
+  }).catch( error => {
+    response.json(error);
+  });
+});
+
+// DELETE route for deleting patient. We can access the ID of the patient to delete in
+  // req.params.id
+  app.delete("/api/add/:id", function(req, res) {
+    db.Patient.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then( newPatient => {
+      res.json(newPatient);
+    });
+  });
+
+  // PUT route for updating patient. We can access the updated patient in req.body
+  app.put("/api/add", function(req, res) {
+    db.Patient.update({
+     text: req.body.text,
+     complete: req.body.complete
+    },
+    {
+     where: {
+       id: req.body.id
+     }
+    }).then( updatedPatient=> {
+      res.json(updatedPatient);
+    });
+ });
+
 };
-
-//   // Route for viewing page
-//   app.get("/api/add", function(req, res) {
-//     req.add();
-//     res.redirect("/add");
-//   });
-
-//   // Route for adding page
-//   app.get("/api/view", function(req, res) {
-//     req.view();
-//     res.redirect("/view");
-//   });
-// };
+ 
