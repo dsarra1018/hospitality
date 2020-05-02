@@ -148,6 +148,10 @@ h1{
   display: none;
 }*/
 
+.card-header{
+  background-color: #fff;
+}
+
 h3{
   margin: 0 0 10px;
   padding: 0;
