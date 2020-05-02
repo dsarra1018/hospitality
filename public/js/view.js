@@ -2,15 +2,17 @@
 
 //get information from add form
 $("#search-btn").on("click", function() {
+    $("patientRecord").toggle();
     const searchedPatient= $("#name-search").val().trim();
 
     
     
     searchedPatient = searchedPatient.replace(/\s+/g, "").toLowerCase();
 
-    $.get("/api/characters/" + searchedPatient, function(data) {
+    $.get("/api/add/" + searchedPatient, function(data) {
       console.log(data);
       if (data) {
+        $("#patientRecord").show();
         $("#inputFirstName").text(data.firstName),
         $("#inputLastName").text(data.lastName),
         $("#inputDOB").text(data.dob),
