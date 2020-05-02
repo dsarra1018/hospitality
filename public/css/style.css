@@ -152,6 +152,12 @@ h1{
   background-color: #fff;
 }
 
+lotter-player{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h3{
   margin: 0 0 10px;
   padding: 0;
@@ -175,10 +181,6 @@ h4{
 
 @media screen and (max-width: 425px){
 .search_box{
-  width:90%;
-}
-
-#patientRecord{
   width:90%;
 }
 }
