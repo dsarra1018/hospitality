@@ -1,4 +1,4 @@
-//
+//get information from add form
 $("#search-btn").on("click", function() {
     const searchedCharacter = $("#name-search").val().trim();
 
@@ -18,6 +18,7 @@ $("#search-btn").on("click", function() {
       } else {
         $("#inputFirstName","#inputLastName").text(
           "No patient found");
+          $("#patientRecord").hide();
       }
     });
 });
@@ -26,3 +27,4 @@ app.get('/search', (req, res){
     const {term} = req.query;
 
 })
+

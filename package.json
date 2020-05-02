@@ -19,6 +19,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "lottie-web": "^5.6.8",
     "mysql2": "^1.7.0",
     "nodemon": "^2.0.3",
     "passport": "^0.4.1",
