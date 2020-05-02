@@ -102,6 +102,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Rubik', sans-serif;
   }
 
   .wrapper{
@@ -153,3 +154,9 @@ nav {
       width:90%;
     }
   }
+
+  /*font-family: 'Cabin', sans-serif;
+font-family: 'Barlow', sans-serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;*/
