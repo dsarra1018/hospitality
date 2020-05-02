@@ -8,10 +8,7 @@ module.exports = function(app) {
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
    
-    res.json({
-      email: req.user.email,
-      id: req.user.id
-    });
+    res.json(req.user);
   });
 
   // Route for signing up a user. 
@@ -47,11 +44,6 @@ module.exports = function(app) {
   //   req.logout();
   //   res.redirect("/");
   // });
-
-// //GET route to add
-// app.get("api/add", function(req, res) {
-//   res.json(add);
-// });
 
 // //Get route to view
 // app.get("api/view", function(req, res) {
