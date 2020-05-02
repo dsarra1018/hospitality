@@ -143,6 +143,10 @@ h1{
 }
 
 /*Record section*/
+#patientRecord{
+    display: none;
+}
+
 h3{
     margin: 0 0 10px;
     padding: 0;

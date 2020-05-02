@@ -1,6 +1,8 @@
+
+
 //get information from add form
 $("#search-btn").on("click", function() {
-    const searchedCharacter = $("#name-search").val().trim();
+    const searchedPatient= $("#name-search").val().trim();
 
     
     
