@@ -58,16 +58,19 @@ module.exports = function(app) {
 });
 
 // POST route for saving a new patient.
-app.post("/api/add", function(request, response) {
-  db.Patient.create(
-    {
-      text: request.body.text,
-      complete: request.body.complete
-   }).then( newPatient => {
-    response.json(newPatient);
-  }).catch( error => {
-    response.json(error);
+app.post("/api/add", (req, res) => {
+  console.log("Patient's Data:");
+  console.log(req.body);
+
+  db.Patient.create({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    dob: req.body.dob,
+    symptoms: req.body.symptoms,
+    diagnosis: req.body.diagnosis,
+    treatment: req.body.treatment
   });
+  res.status(204).end();
 });
 
 // DELETE route for deleting patient. We can access the ID of the patient to delete in
