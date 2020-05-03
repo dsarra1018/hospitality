@@ -1,6 +1,6 @@
 // Creating a "Patient" model
 module.exports = function(sequelize, DataTypes) {
-    const Patient = sequelize.define("patients", {
+    const Patient = sequelize.define("Patient", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         last_name: DataTypes.STRING,
         first_name: DataTypes.STRING,
-        dob: DataTypes.STRING,
+        dob: DataTypes.DATE,
         symptoms: DataTypes.TEXT,
         diagnosis: DataTypes.TEXT,
         treatment: DataTypes.TEXT
