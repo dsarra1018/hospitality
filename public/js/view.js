@@ -1,16 +1,15 @@
 //get information from add form
 $("#search-btn").on("click", function() {
     $("patientRecord").toggle();
-<<<<<<< HEAD
-    let searchedPatient= $("#name-search").val().trim();
-=======
-    const searchedPatient= $("#name-search").val().trim();
->>>>>>> master
+    // CHAD: #name-search can cause problems. i've renamed the variabel "name" here and in view.html.
+    let searchedPatient= $("#name").val().trim(); // cannot be a const. you cannot assing a new value to const.
 
     searchedPatient = searchedPatient.replace(/\s+/g, "").toLowerCase();
 
-    $.get("/api/add" + searchedPatient, function(data) {
-      console.log(data);
+    // CHAD: is this is a get or a post? if a get, why is the api called "add". I would rename this;
+    // it is confusing. 
+    $.get("/api/add", function(data) {
+      console.log('this is the data' + data);
       if (data) {
         $("#patientRecord").show();
         $("#inputFirstName").text(data.first_name),
@@ -26,19 +25,14 @@ $("#search-btn").on("click", function() {
       }
     });
 });
-  // search for patient
-<<<<<<< HEAD
-app.get('/search', (req, res) => {
-    const {term} = req.query;
+    
+    // search for patient
+    $.get('/search', (req, res) => {
+        const {term} = req.query;
+        console.log(req.query);
+    })
 
-})
 
-=======
-app.get('/search', (req, res) {
-    const {term} = req.query;
-
-})
->>>>>>> master
 $(function() {
 
   // Add a new burger.

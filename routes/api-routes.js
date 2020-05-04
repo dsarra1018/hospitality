@@ -49,9 +49,11 @@ module.exports = function(app) {
   //   res.json(view);
   // })
 
+  // CHAD: I would rename this
   // GET route for getting all of the patient
   app.get("/api/add", function(request, response) {
-    db.Patient.findAll({}).then( dbnewPatient => {
+  
+    db.Patient.findOne({last_name: request.body.last_name, first_name: request.body.first_name}).then( dbnewPatient => {
       response.json(dbnewPatient);
     });  
   });
