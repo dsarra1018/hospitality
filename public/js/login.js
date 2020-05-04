@@ -28,11 +28,11 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function() {
+      .then(() => {
         window.location.replace("/index");
         // If there's an error, log the error
       })
-      .catch(function(err) {
+      .catch((err) => {
         console.log(err);
       });
   }
