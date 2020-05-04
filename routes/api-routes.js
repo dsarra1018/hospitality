@@ -56,12 +56,13 @@ module.exports = (app) => {
 
 
  // GET route for getting all of the patient
-   app.get("/api/add", (req, res) => {
-    db.Patient.findAll({}).then( dbnewPatient => {
-      res.json(dbnewPatient);
+  app.get("/api/add", (request, response) => {
+    db.Patient.findOne({last_name: request.body.last_name, first_name: request.body.first_name}).then( dbnewPatient => {
+      response.json(dbnewPatient);
+
     });
   });
-
+  
   // POST route for saving a new patient.
   app.post("/api/add", (req, res) => {
     console.log("Patient's Data:");
@@ -106,4 +107,5 @@ module.exports = (app) => {
         res.json(updatedPatient);
       });
   });
-}
+ }
+
