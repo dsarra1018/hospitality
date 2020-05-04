@@ -26,9 +26,11 @@ span {
 html, body {
   background-color: #e1ded7;
 }
+
 .fa {
   color: white;
 }
+
 #app-logo {
   display: block;
   margin-left: auto;
@@ -44,7 +46,22 @@ html, body {
   margin-right: auto;
   width: 75%;
   background-color: #f4ebe6;
+  box-shadow: 0 0 20px #00000060;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
+
+#card {
+  box-shadow: 0 0 20px #00000060;
+  background-color: #f4ebe6;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .record {
   background-color: white;
 }
@@ -63,12 +80,14 @@ img {
   padding: 5px;
   margin: 10px;
 }
+
 .sympt{
   background-color: pink;
   background-repeat: repeat;
   border-radius:10px;
   padding: 5px;
 }
+
 .diag {
   background-color:green;
   background-repeat: repeat;
@@ -76,6 +95,7 @@ img {
   padding: 5px;
   margin: 15px;
 }
+
 .treat {
   background-color:tan;
   background-repeat: repeat;
@@ -88,6 +108,7 @@ img {
 .jumbotron-fluid{
   background-color: #f4ebe6;
 }
+
 h1{
   margin: 0 0 10px;
   padding: 0;
@@ -104,6 +125,7 @@ h1{
   justify-content: center;
   align-items: center;
 }
+
 .search_box{
   width: 50%;
   position: relative;

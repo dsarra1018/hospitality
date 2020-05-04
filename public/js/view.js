@@ -23,7 +23,9 @@ $("#search-btn").on("click", function() {
     });
 });
   // search for patient
-app.get('/search', (req, res) {
+
+app.get('/search', (req, res) => {
+
     const {term} = req.query;
 
 })
