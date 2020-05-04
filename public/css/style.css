@@ -1,4 +1,3 @@
-
 /* All css */
 
 nav {
@@ -27,6 +26,16 @@ span {
 html, body {
   background-color: #e1ded7;
 }
+.fa {
+  color: white;
+}
+#app-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  width: 40px;
+}
 
 /* view css */
 .card {
@@ -47,21 +56,6 @@ img {
   width: 75%;
 }
 
-#app-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 40px;
-  width: 40px;
-}
-
-.sidepic {
-  background-color: blue;
-  background-repeat: repeat;
-  border-radius:10px;
-  padding: 5px;
-  height: 100%;
-}
 .namedob {
   background-color: yellow;
   background-repeat: repeat;
@@ -89,3 +83,110 @@ img {
   padding: 5px;
   margin: 15px;
 }
+
+/*search area*/
+.jumbotron-fluid{
+  background-color: #f4ebe6;
+}
+h1{
+  margin: 0 0 10px;
+  padding: 0;
+  color: black;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search_box{
+  width: 50%;
+  position: relative;
+}
+
+.search_box input[type="text"]{
+  width: 100%;
+  padding: 20px;
+  padding-right: 60px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 18px;
+  color:#fff;
+  outline: none;
+}
+
+::-webkit-input-placeholder{
+  color: #fff;
+}
+
+::-moz-placeholder{
+  color: #fff;
+}
+
+:-ms-input-placeholder{
+  color:#fff;
+}
+
+.fa-search{
+  position: absolute;
+  top: 35px;
+  transform: translateY(-50%);
+  right:20px;
+  color: #fff;
+  font-size: 25px;
+}
+
+/*Record section
+#patientRecord{
+  display: none;
+}*/
+
+.card-header{
+  background-color: #fff;
+}
+
+lotter-player{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3{
+  margin: 0 0 10px;
+  padding: 0;
+  color: black;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
+}
+h4{
+  margin: 0 0 10px;
+  padding: 0;
+  color: black;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
+}
+
+@media screen and (max-width: 425px){
+.search_box{
+  width:90%;
+}
+}
+
+/*font-family: 'Cabin', sans-serif;
+font-family: 'Barlow', sans-serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Roboto', sans-serif;*/

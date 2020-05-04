@@ -10,9 +10,10 @@ CREATE TABLE patients (
   id INT NOT NULL AUTO_INCREMENT,
   last_name VARCHAR(50) NOT NULL,
   first_name VARCHAR(50) NOT NULL,
-  dob VARCHAR(50) NOT NULL,
+  dob DATE NOT NULL,
   symptoms VARCHAR(500) NOT NULL,
   diagnosis VARCHAR(500) NOT NULL,
-  treatment VARCHAR(500) NOT NULL,
+  treatment VARCHAR(500),
   PRIMARY KEY (id)
 );
+

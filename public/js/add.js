@@ -4,8 +4,8 @@ $("#add-btn").on("click", function(event) {
 
     // Make a newPatient object
     let newPatient = {
-        firstName: $("#inputFirstName").val().trim(),
-        lastName: $("#inputLastName").val().trim(),
+        first_name: $("#inputFirstName").val().trim(),
+        last_name: $("#inputLastName").val().trim(),
         dob: $("#inputDOB").val().trim(),
         symptoms: $("#textareaSymptoms").val().trim(),
         diagnosis: $("#textareaDiagnosis").val().trim(),
@@ -13,7 +13,7 @@ $("#add-btn").on("click", function(event) {
     };
 
     // Send an AJAX POST-request with jQuery
-    $.post("/api/new", newPatient)
+    $.post("/api/add", newPatient)
         .then((data) => {
             console.log(data);
             alert("Adding patient...");

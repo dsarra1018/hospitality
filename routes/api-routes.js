@@ -1,17 +1,13 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+const db = require("../models");
+const passport = require("../config/passport");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-   
-    res.json({
-      email: req.user.email,
-      id: req.user.id
-    });
+    res.json(req.user);
   });
 
   // Route for signing up a user. 
@@ -22,12 +18,12 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password
     })
-      .then(function() {
-        res.redirect(307, "/api/login");
-      })
-      .catch(function(err) {
-        res.status(401).json(err);
-      });
+    .then(function() {
+      res.redirect(307, "/api/login");
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    });
   });
 
   //Route for getting some data about our user to be used client side
@@ -48,37 +44,35 @@ module.exports = function(app) {
   //   res.redirect("/");
   // });
 
-// //GET route to add
-// app.get("api/add", function(req, res) {
-//   res.json(add);
-// });
+  // //Get route to view
+  // app.get("api/view", function(req, res) {
+  //   res.json(view);
+  // })
 
-// //Get route to view
-// app.get("api/view", function(req, res) {
-//   res.json(view);
-// })
-
- // GET route for getting all of the patient
- app.get("/api/add", function(request, response) {
-  db.Patient.findAll({}).then( dbnewPatient => {
-    response.json(dbnewPatient);
+  // GET route for getting all of the patient
+  app.get("/api/add", function(request, response) {
+    db.Patient.findAll({}).then( dbnewPatient => {
+      response.json(dbnewPatient);
+    });  
   });
-});
 
-// POST route for saving a new patient.
-app.post("/api/add", function(request, response) {
-  db.Patient.create(
-    {
-      text: request.body.text,
-      complete: request.body.complete
-   }).then( newPatient => {
-    response.json(newPatient);
-  }).catch( error => {
-    response.json(error);
+  // POST route for saving a new patient.
+  app.post("/api/add", (req, res) => {
+    console.log("Patient's Data:");
+    console.log(req.body);
+
+    db.Patient.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      dob: req.body.dob,
+      symptoms: req.body.symptoms,
+      diagnosis: req.body.diagnosis,
+      treatment: req.body.treatment
+    });
+    res.status(204).end();
   });
-});
 
-// DELETE route for deleting patient. We can access the ID of the patient to delete in
+  // DELETE route for deleting patient. We can access the ID of the patient to delete in
   // req.params.id
   app.delete("/api/add/:id", function(req, res) {
     db.Patient.destroy({
@@ -90,20 +84,20 @@ app.post("/api/add", function(request, response) {
     });
   });
 
-  // PUT route for updating patient. We can access the updated patient in req.body
+    // PUT route for updating patient. We can access the updated patient in req.body
   app.put("/api/add", function(req, res) {
     db.Patient.update({
-     text: req.body.text,
-     complete: req.body.complete
+      text: req.body.text,
+      complete: req.body.complete
     },
     {
-     where: {
-       id: req.body.id
-     }
-    }).then( updatedPatient=> {
-      res.json(updatedPatient);
-    });
- });
+      where: {
+        id: req.body.id
+      }
+      }).then(updatedPatient => {
+        res.json(updatedPatient);
+      });
+  });
+}
 
-};
  

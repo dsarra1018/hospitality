@@ -7,11 +7,15 @@
         <title>Patient Exspress App</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
         <link rel="stylesheet" href="./css/style.css">
+        
     </head>
       
     <body>
         <nav class="navbar">
             <a class="navbar-brand" href="./index.html"><strong><span>Hospital</span>ity  </strong><img class="d-inline-block align-top" id="app-logo" src="./img/icon.png" alt="App logo"></a>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="./login.html"> Logout</a>
+            </div>
         </nav>
         <div class="container">
             <div class="row">
@@ -19,7 +23,7 @@
                 <div class="col-md-6">
                     <div id="color" style="margin-top: 80px;" class="jumbotron text-center">
                         <h3>Patient Sign Up</h3>
-                        <form>
+                        <form action="view.html" method="POST" role="form">
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label for="inputFirstName">First name</label>
@@ -31,7 +35,7 @@
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="inputDOB">Date of Birth</label>
-                                    <input type="text" class="form-control" id="inputDOB" placeholder="MM/DD/YYYY">
+                                    <input type="text" class="form-control" id="inputDOB" placeholder="YYYY-MM-DD">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -46,7 +50,7 @@
                                 <label for="textareaTreatment">Treatment</label>
                                 <textarea class="form-control" id="textareaTreatment" rows="3"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="add-btn">Add Patient!</button>
+                            <button type="submit" class="btn btn-primary" id="add-btn">Save</button>
                         </form>
                     </div>
                 </div>

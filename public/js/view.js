@@ -1,7 +1,11 @@
 //get information from add form
 $("#search-btn").on("click", function() {
     $("patientRecord").toggle();
+<<<<<<< HEAD
     let searchedPatient= $("#name-search").val().trim();
+=======
+    const searchedPatient= $("#name-search").val().trim();
+>>>>>>> master
 
     searchedPatient = searchedPatient.replace(/\s+/g, "").toLowerCase();
 
@@ -23,11 +27,18 @@ $("#search-btn").on("click", function() {
     });
 });
   // search for patient
+<<<<<<< HEAD
 app.get('/search', (req, res) => {
     const {term} = req.query;
 
 })
 
+=======
+app.get('/search', (req, res) {
+    const {term} = req.query;
+
+})
+>>>>>>> master
 $(function() {
 
   // Add a new burger.
