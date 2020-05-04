@@ -2,11 +2,11 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = (app) => {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), (req, res) => {
    
     res.json(req.user);
   });
@@ -14,15 +14,15 @@ module.exports = function(app) {
   // Route for signing up a user. 
   // If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", function(req, res) {
+  app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
       password: req.body.password
     })
-      .then(function() {
+      .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch(function(err) {
+      .catch((err) => {
         res.status(401).json(err);
       });
   });
@@ -36,7 +36,7 @@ module.exports = function(app) {
         email: req.user.email,
         id: req.user.id
       });
-    }
+    };
   });
 
   // //Route for loggin user out
@@ -51,7 +51,7 @@ module.exports = function(app) {
 // })
 
  // GET route for getting all of the patient
- app.get("/api/add", function(request, response) {
+ app.get("/api/add", (request, response) => {
   db.Patient.findAll({}).then( dbnewPatient => {
     response.json(dbnewPatient);
   });
@@ -75,7 +75,7 @@ app.post("/api/add", (req, res) => {
 
 // DELETE route for deleting patient. We can access the ID of the patient to delete in
   // req.params.id
-  app.delete("/api/add/:id", function(req, res) {
+  app.delete("/api/add/:id", (req, res) => {
     db.Patient.destroy({
       where: {
         id: req.params.id
@@ -86,7 +86,7 @@ app.post("/api/add", (req, res) => {
   });
 
   // PUT route for updating patient. We can access the updated patient in req.body
-  app.put("/api/add", function(req, res) {
+  app.put("/api/add", (req, res) => {
     db.Patient.update({
      text: req.body.text,
      complete: req.body.complete

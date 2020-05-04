@@ -28,14 +28,14 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function(data) {
+      .then((data) => {
         window.location.replace("/index");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }
 
-  function handleLoginErr(err) {
+   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
