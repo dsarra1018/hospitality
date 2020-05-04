@@ -7,6 +7,7 @@
         <title>Patient Express App</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
         <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/api.css">
     </head>
       
     <body>
@@ -16,7 +17,7 @@
             <a class="navbar-brand" href="./login.html"> Logout</a>
             </div>
         </nav>
-  <div class="container">
+  <div class="container" id="card">
     <div id="color" style="margin-top: 80px;" class="jumbotron text-center">
       <img src="./img/doc icon.png" alt="doctor logo">
       <h1 class="display-4">Welcome to Hospitality app</h1>
@@ -25,8 +26,69 @@
       <a class="btn btn-primary btn-lg mt-4" href="./view.html" role="button">View patient</a>
     </div>
   </div>
+
+  <div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+          <h2 class="display-4">World Covid-19 statistic</h2>
+        </div>
+    </div>
+  </div>
+    <hr>
+    <br>
+    
+    <div class="container-fluid padding">
+      <div class="row padding">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h4 class="card-title">Total Cases</h4>
+              <p id="total_cases"></p>
+            </div>
+          </div>
+        </div>
+  
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h4 class="card-title">Total Death</h4>
+                  <p id="total_death"></p>
+
+                </div>
+              </div>
+            </div>
+  
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <h4 class="card-title">Total Recovery</h4>
+                      <p id="total_recovered"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <h4 class="card-title">New Case</h4>
+                      <p id="new_case"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <h4 class="card-title">New Death</h4>
+                      <p id="new_death"></p>
+                    </div>
+                  </div>
+                </div>
+    </div>
+    </div>
 </body>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="./js/members.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./js/api.js"></script>
 </html>
