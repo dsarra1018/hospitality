@@ -208,6 +208,72 @@ h4{
 }
 }
 
+.login-box {
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.4s;
+  background-color: #f4ebe6;
+}
+
+.login-box h1 {
+  margin-left: 40px;
+  font-size: 40px;
+  font-weight: 100px;
+  margin-bottom: 40px;
+  padding: 13 px 0;
+}
+
+.login-box p {
+  margin-left: 40px;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 13 px 0;
+}
+
+.login-box a {
+  color: red;
+}
+
+.textbox {
+  width: 100%;
+  border: none;
+  overflow: hidden;
+  font-size: 20px;
+  padding:  8px 0;
+  margin: 8px 0;
+  
+}
+
+.textbox i {
+  width: 26px;
+  float: left;
+  text-align: center;
+  margin-left: 6px;
+  margin-top: 2px;
+  color: black;
+}
+
+.textbox input {
+  font-size: 18px;
+  border: none;
+  width: 80%;
+  float: left;
+  margin: 0 5px;
+  color: black;
+  background: rgb(206, 192, 192);
+}
+
+.btnlog {
+  width: 100%;
+  padding: 5px;
+  font-size: 18px;
+  margin: 12px 0;
+  border: none;
+}
 /*demo*/
 /*font-family: 'Cabin', sans-serif;
 font-family: 'Barlow', sans-serif;
