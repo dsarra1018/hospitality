@@ -36,4 +36,13 @@ $(document).ready(function() {
     }).on('hide.bs.collapse', function() {
         $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
     });
+
+    // Delete information from database
+    $("#trashbutton").on("click", function() {
+        let id = $(this).data("id");
+        $.ajax({
+            method: "DELETE",
+            url: "/api/patient/" + id
+        });
+    });
 });
