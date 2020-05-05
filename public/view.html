@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Barlow|Cabin|Noto+Serif|Roboto|Rubik&display=swap|Inika&display=swap|Oswald:500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -19,102 +24,82 @@
         </div>
     </nav>
     <div class="jumbotron jumbotron-fluid">
-        <h1>Search Patient records</h1>
-        <h2>
-            <div class="wrapper" action="view/search">
-                <div class="search_box">
-                    <input type="text" id="name" placeholder="Type the patient's name...">
-                    <button class="btn bg-transparent fa fa-search " id="search-btn" type="submit"></button>
-                </div>
+        <h2>Search Patient Records</h2>
+        <div class="wrapper" action="/view/search">
+            <div class="search_box">
+                <input type="text" id="name" placeholder="Patient's name...">
+                <button class="btn bg-transparent fa fa-search " id="search-btn" type="submit"></button>
             </div>
-        </h2>        
-        
+        </div>
     </div>
     <div class="container">
-        <div  id="patientRecord"> 
-            <div class="row">
-                <!--Title of record-->
-                <div class="col-12">
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <h1>Patient Record</h1>
-                        </div>
-                        <!--record page-->
-                        <div class="card-body record" action= "http://localhost:8080/add" method="post">
-                            <div class="container"> 
-                                <!--Row one: 2 cols. left = pic, right = 2 rows-->
-                                <div class="row"> 
-                                    <!--pic column-->
-                                <div class="col-sm-6">
-                                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_GZVTNZ.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div id="patientRecord" class="col-md-6">
+                <div id="color" style="margin-top: 35px;" class="jumbotron text-center">
+                    <h3 id="result">Patient Record</h3>
+                    <p id="inputName"></p>
+                    <p id="inputDOB"></p>
+                    <div class="bs-example">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"><i class="fa fa-plus"></i>Symptoms</button>									
+                                    </h2>
                                 </div>
-                                <!--Name/DOB row and Symptoms col-->
-                                <div class="col-sm-6">
-                                    <!--row for Name/DOB-->
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="namedob">
-                                                    <h3><span id="inputLasttName"></span>, <span id="inputFirstName"></h3>
-                                                    <h4><span id="inputDOB"></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--row for symtoms-->
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="sympt">
-                                                <h3>Symptoms</h3>
-                                                <p>
-                                                    <span id="textareaSymptoms"></span>
-                                                </p>   
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <!--row for Diagnosis-->
-                                </div>
-                                <div class="row"> 
-                                    <div class="col-sm-12">
-                                        <div class="diag">
-                                            <h3>Diagnosis</h3>
-                                            <p><span id="textareaDiagnosis"></span></p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <!--row for treatment-->
-                                <div class="row"> 
-                                    <div class="col-sm-12">
-                                        <div class="treat">
-                                            <h3>Treatment</h3>
-                                            <p><span id="textareaTreatment"></p>
-                                        </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p id="textareaSymptoms">
+                                        </p>
                                     </div>
                                 </div>
-                                <!--row for delete button-->
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <button type="button" class="btn btn-danger" id ="trashbutton"><span class="fa fa-trash"></span>  Delete patient record</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"><i class="fa fa-plus"></i>Diagnosis</button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p id="textareaDiagnosis">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"><i class="fa fa-plus"></i>Treatment</button>                     
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p id="textareaTreatment">
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                     
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-danger" id="trashbutton"><span class="fa fa-trash"></span>  Delete patient record</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="col-md-3"></div>
         </div>
+        
     </div>
-                                     
-    
-    
 </body>
-
-
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie.js'></script>>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie.js'></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <!-- Custom Script -->
