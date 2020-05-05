@@ -5,13 +5,16 @@ $(document).ready(function() {
         $("#patientRecord").toggle();
         let name = $("#name").val().trim();
         let formatted_name = name.replace(/\s/g, "_");
+        let full_name = "";
 
         $.get("/api/patient/name/" + formatted_name, function(data) {
 
             if (data) {
                 $("#patientRecord").show();
-                $("#inputFirstName").text(data.first_name),
-                $("#inputLastName").text(data.last_name),
+                full_name += data.last_name,
+                full_name += ", ",
+                full_name += data.first_name,
+                $("#inputName").text(full_name),
                 $("#inputDOB").text(data.dob),
                 $("#textareaSymptoms").text(data.symptoms),
                 $("#textareaDiagnosis").text(data.diagnosis),
@@ -40,6 +43,7 @@ $(document).ready(function() {
     // Delete information from database
     $("#trashbutton").on("click", function() {
         let id = $(this).data("id");
+        console.log(id);
         $.ajax({
             method: "DELETE",
             url: "/api/patient/" + id
