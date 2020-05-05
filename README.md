@@ -1,8 +1,10 @@
-# Project 2
+# Hospitatilty
 
 ## Description
             
+Hospitality is a healthcare portal for medical professionals to add, store and update patient records in a simple way.
 
+User story
             
 ## Table of Contents
             
