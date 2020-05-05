@@ -1,31 +1,28 @@
-//get information from add form
-$("#search-btn").on("click", function() {
-    $("patientRecord").toggle();
-    let searchedPatient= $("#name").val().trim();
+$(document).ready(function() {
 
-    searchedPatient = searchedPatient.replace(/\s+/g, "").toLowerCase();
+    // Get information from add form
+    $("#search-btn").on("click", function() {
+        $("#patientRecord").toggle();
+        let name = $("#name").val().trim();
+        let formatted_name = name.replace(/\s/g, "_").toLowerCase();
 
-    $.get("/api/add", function(data) {
-      console.log("this is the data" + data);
-      if (data) {
-        $("#patientRecord").show();
-        $("#inputFirstName").text(data.first_name),
-        $("#inputLastName").text(data.last_name),
-        $("#inputDOB").text(data.dob),
-        $("#textareaSymptoms").text(data.symptoms),
-        $("#textareaDiagnosis").text(data.diagnosis),
-        $("#textareaTreatment").text(data.treatment)
-      } else {
-        $("#inputFirstName","#inputLastName").text(
-          "No patient found");
-          $("#patientRecord").hide();
-      }
+        $.get("/api/patient/name/" + formatted_name, function(data) {
+
+            if (data) {
+                $("#patientRecord").show();
+                $("#inputFirstName").text(data.first_name),
+                $("#inputLastName").text(data.last_name),
+                console.log("Last Name: ", data.last_name),
+                $("#inputDOB").text(data.dob),
+                $("#textareaSymptoms").text(data.symptoms),
+                $("#textareaDiagnosis").text(data.diagnosis),
+                $("#textareaTreatment").text(data.treatment)
+            } else {
+                $("#inputFistName","#inputLastName").text("No patient found");
+                $("#patientRecord").hide();
+            }
+        });
     });
-});
-  
-// search for patient
 
-app.get("/search", (req, res) => {
-    const {term} = req.query;
-    console.log(req.query);
-})
+    // Delete information from database
+});
