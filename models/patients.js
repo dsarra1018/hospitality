@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         last_name: DataTypes.STRING,
         first_name: DataTypes.STRING,
-        dob: DataTypes.DATE,
+        dob: DataTypes.DATEONLY,
         symptoms: DataTypes.TEXT,
         diagnosis: DataTypes.TEXT,
         treatment: DataTypes.TEXT
