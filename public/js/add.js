@@ -26,4 +26,4 @@ $("#add-btn").on("click", function(event) {
     $("#textareaSymptoms").val("")
     $("#textareaDiagnosis").val("")
     $("#textareaTreatment").val("")
-})
+});
