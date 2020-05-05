@@ -2,8 +2,8 @@ $(document).ready(function() {
     //get information from add form
     $("#search-btn").on("click", function() {
         $("patientRecord").toggle();
-        let name = $("#name").val().trim();
-        let formattedName = name.replace(/\s/g, '_').toLowerCase();
+        let name = $("#name").val().trim();                             // First Last
+        let formattedName = name.replace(/\s/g, '_').toLowerCase();     // first_last
       
          $.get("/api/patient/name/" + formattedName, function(data) {
 
