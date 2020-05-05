@@ -56,8 +56,18 @@ module.exports = (app) => {
 
 
  // GET route for getting all of the patient
-  app.get("/api/add", (request, response) => {
-    db.Patient.findOne({last_name: request.body.last_name, first_name: request.body.first_name}).then( dbnewPatient => {
+  app.get("/api/patient/name/:name", (request, response) => {
+    let fullName = request.params.name;       // first_last 
+    let fullNameArr = fullName.split("_");    // split first_last to an array
+    let firstName = fullNameArr[0];           // get first
+    let lastName = fullNameArr[1];            // get Last
+
+    db.Patient.findOne(
+        { where: {
+            last_name: lastName,
+            first_name: firstName
+           }
+        }).then( dbnewPatient => {
       response.json(dbnewPatient);
     });
   });
