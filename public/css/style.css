@@ -40,7 +40,7 @@ html, body {
 }
 
 /* view css */
-.card {
+/* .card {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -50,12 +50,12 @@ html, body {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
-}
+} */
 
-#card {
+/* #card {
   box-shadow: 0 0 20px #00000060;
   background-color: #f4ebe6;
-}
+} */
 
 p {
   font-size: 20px;
@@ -109,11 +109,11 @@ img {
   background-color: #f4ebe6;
 }
 
-h1{
+h2{
   margin: 0 0 10px;
   padding: 0;
   color: black;
-  font-size: 40px;
+  font-size: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,11 +133,11 @@ h1{
 
 .search_box input[type="text"]{
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   padding-right: 60px;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.3);
-  border: 2px solid #fff;
+  border: .5px solid white;
   border-radius: 10px;
   font-size: 18px;
   color:#fff;
@@ -158,7 +158,7 @@ h1{
 
 .fa-search{
   position: absolute;
-  top: 35px;
+  top: 30px;
   transform: translateY(-50%);
   right:20px;
   color: #fff;
@@ -170,9 +170,9 @@ h1{
   display: none;
 }*/
 
-.card-header{
+/* .card-header{
   background-color: #fff;
-}
+} */
 
 lotter-player{
   display: flex;
@@ -180,7 +180,7 @@ lotter-player{
   align-items: center;
 }
 
-h3{
+/* h3{
   margin: 0 0 10px;
   padding: 0;
   color: black;
@@ -189,7 +189,8 @@ h3{
   justify-content: center;
   align-items: center;
   font-family: 'Rubik', sans-serif;
-}
+} */
+
 h4{
   margin: 0 0 10px;
   padding: 0;
