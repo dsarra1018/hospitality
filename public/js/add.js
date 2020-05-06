@@ -20,11 +20,10 @@ $("#add-btn").on("click", function(event) {
         });
     
     // Empty each input box by replacing the value with an empty string
-    $("inputFirstName").val("");
-    $("inputLastName").val("");
+    $("#inputFirstName").val("");
+    $("#inputLastName").val("");
     $("#inputDOB").val("")
     $("#textareaSymptoms").val("")
     $("#textareaDiagnosis").val("")
     $("#textareaTreatment").val("")
 });
-
