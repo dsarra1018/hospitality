@@ -11,11 +11,15 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+#cases {
+    background-color: #f4ebe6;
+}
 .statistic{
     width: 100%;
 }
 
-.total_case_box{
+.total_case_box {
     background-color: #fafafa;
     box-shadow: 2px 2px 8px rgba(30,30,30,.2);
     margin: 10px 15px;
