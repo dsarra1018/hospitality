@@ -5,15 +5,16 @@ $(document).ready(function() {
         $("#patientRecord").toggle();
         let name = $("#name").val().trim();
         let formatted_name = name.replace(/\s/g, "_");
+        console.log(formatted_name);
         let full_name = "";
 
         $.get("/api/patient/name/" + formatted_name, function(data) {
 
             if (data) {
                 $("#patientRecord").show();
-                full_name += data.last_name,
-                full_name += ", ",
                 full_name += data.first_name,
+                full_name += " ",
+                full_name += data.last_name,
                 $("#inputName").text(full_name),
                 $("#inputDOB").text(data.dob),
                 $("#textareaSymptoms").text(data.symptoms),
@@ -24,7 +25,7 @@ $(document).ready(function() {
                 $("#result").text("No Patient Found");
                 $(".bs-example").hide();
                 $("#trashbutton").hide();
-            }
+            };
         });
     });
 
@@ -42,11 +43,15 @@ $(document).ready(function() {
 
     // Delete information from database
     $("#trashbutton").on("click", function() {
-        let id = $(this).data("id");
-        console.log(id);
-        $.ajax({
-            method: "DELETE",
-            url: "/api/patient/" + id
-        });
+        let name = $("#inputName").text().replace(/\s/g, "_");
+        console.log(name);
+
+        $.get("/api/patient/name/" + name, function(data) {
+            $.ajax({
+                method: "DELETE",
+                url: "/api/patient/" + data.id
+            })
+            alert("Deleting patients...");
+        })
     });
 });
