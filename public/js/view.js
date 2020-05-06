@@ -11,19 +11,28 @@ $(document).ready(function() {
         $.get("/api/patient/name/" + formatted_name, function(data) {
 
             if (data) {
+                $("#name").val("");
                 $("#patientRecord").show();
-                full_name += data.first_name,
-                full_name += " ",
-                full_name += data.last_name,
-                $("#inputName").text(full_name),
-                $("#inputDOB").text(data.dob),
-                $("#textareaSymptoms").text(data.symptoms),
-                $("#textareaDiagnosis").text(data.diagnosis),
-                $("#textareaTreatment").text(data.treatment)
+                full_name += data.first_name;
+                full_name += " ";
+                full_name += data.last_name;
+                $("#result").text("Patient Record");
+                $(".bs-example").show();
+                $("#notes").show();
+                $("#trashbutton").show();
+                $("#inputName").text(full_name);
+                $("#inputDOB").text(data.dob);
+                $("#textareaSymptoms").text(data.symptoms);
+                $("#textareaDiagnosis").text(data.diagnosis);
+                $("#textareaTreatment").text(data.treatment);
             } else {
+                $("#name").val("");
                 $("#patientRecord").show();
                 $("#result").text("No Patient Found");
+                $("#inputName").text("");
+                $("#inputDOB").text("");
                 $(".bs-example").hide();
+                $("#notes").hide();
                 $("#trashbutton").hide();
             };
         });
@@ -52,6 +61,11 @@ $(document).ready(function() {
                 url: "/api/patient/" + data.id
             })
             alert("Deleting patients...");
+            $("#inputName").text(""),
+            $("#inputDOB").text(""),
+            $("#textareaSymptoms").text(""),
+            $("#textareaDiagnosis").text(""),
+            $("#textareaTreatment").text("")
         })
     });
 });
