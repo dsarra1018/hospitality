@@ -27,3 +27,4 @@ $("#add-btn").on("click", function(event) {
     $("#textareaDiagnosis").val("")
     $("#textareaTreatment").val("")
 });
+
