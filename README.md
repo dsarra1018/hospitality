@@ -2,7 +2,7 @@
 
 ## Description
             
-Hospitality is a healthcare portal for medical professionals to add, store and update patient records in a simple way. It is also tracks current treats in the whole such as the Corona virus.
+Hospitality is a healthcare portal for medical professionals to add, store and update patient records in a simple way. It is also tracks current treats such as the Corona virus.
 
 
 ![](public/img/project%20display2.png)
