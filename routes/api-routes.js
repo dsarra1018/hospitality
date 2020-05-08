@@ -73,7 +73,7 @@ module.exports = function(app) {
 
   // DEvarE route for devaring patient. We can access the ID of the patient to devare in
   // req.params.id
-  app.devare("/api/patient/:id", function(req, res) {
+  app.delete("/api/patient/:id", function(req, res) {
     db.Patient.destroy({
       where: {
         id: req.params.id
