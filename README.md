@@ -7,6 +7,8 @@ Hospitality is a healthcare portal for medical professionals to add, store and u
 
 ![](public/img/project%20display2.png)
 
+## Deployed app: https://hospitality-1.herokuapp.com/
+
 ## User story
 
 ``` 
