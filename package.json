@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "npm run lint",
-    "start": "node server.js",
+    "start": "node dist/index.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
     "watch": "nodemon server.js"
