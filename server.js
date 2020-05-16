@@ -6,6 +6,7 @@ var session = require("express-session");
 var passport = require("./config/passport");
 // Dependencies
 var path = require("path");
+var compression = require("compression");
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
@@ -22,6 +23,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(compression());
 
 //body parser to get info from a form
 app.use(express.static(path.join(__dirname, "public")));
