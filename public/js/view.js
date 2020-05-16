@@ -73,10 +73,10 @@ $(document).ready(function() {
 
     $.get("/api/patient/name/" + name, function(data) {
       $.ajax({
-        method: "DEvarE",
+        method: "DELETE",
         url: "/api/patient/" + data.id
       });
-      alert("Devaring patients...");
+      alert("Deleting patients...");
       $("#inputName").text("");
       $("#inputDOB").text("");
       $("#textareaSymptoms").text("");
